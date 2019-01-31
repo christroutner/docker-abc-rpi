@@ -1,4 +1,6 @@
-FROM debian:stretch-slim
+#FROM debian:stretch-slim
+FROM ubuntu:18.04
+MAINTAINER Chris Troutner <chris.troutner@gmail.com>
 
 RUN groupadd -r bitcoin && useradd -r -m -g bitcoin bitcoin
 
