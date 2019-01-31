@@ -6,7 +6,7 @@ RUN groupadd -r bitcoin && useradd -r -m -g bitcoin bitcoin
 
 RUN set -ex \
 	&& apt-get update \
-	&& apt-get install -qq --no-install-recommends -y curl wget gpg
+	&& apt-get install -qq --no-install-recommends -y curl wget gpg sudo
 
 #	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr gosu \
 #  curl gpg wget gpg-agent \
