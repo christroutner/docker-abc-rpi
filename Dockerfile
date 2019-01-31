@@ -6,7 +6,8 @@ RUN groupadd -r bitcoin && useradd -r -m -g bitcoin bitcoin
 
 RUN set -ex \
 	&& apt-get update \
-	&& apt-get install -qq --no-install-recommends -y curl wget gpg sudo
+	&& apt-get install -qq --no-install-recommends -y curl wget gpg sudo \
+	software-properties-common
 
 #	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr gosu \
 #  curl gpg wget gpg-agent \
@@ -39,6 +40,7 @@ RUN apt-get install -y nodejs build-essential
 COPY dummyapp.js dummyapp.js
 ### End development code
 
+RUN apt-get
 RUN add-apt-repository ppa:bitcoin-abc/ppa
 RUN apt-get update
 RUN sudo apt-get install bitcoind
