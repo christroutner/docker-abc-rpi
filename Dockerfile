@@ -7,7 +7,7 @@ RUN groupadd -r bitcoin && useradd -r -m -g bitcoin bitcoin
 RUN set -ex \
 	&& apt-get update \
 	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr gosu \
-  curl gpg wget \
+  curl gpg wget gpg-agent \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV BITCOIN_VERSION 0.18.7
