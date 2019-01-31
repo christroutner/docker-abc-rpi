@@ -22,10 +22,12 @@ RUN set -ex \
 
 # create data directory
 ENV BITCOIN_DATA /data
-RUN mkdir "$BITCOIN_DATA" \
-	&& chown -R bitcoin:bitcoin "$BITCOIN_DATA" \
-	&& ln -sfn "$BITCOIN_DATA" /home/bitcoin/.bitcoin \
-	&& chown -h bitcoin:bitcoin /home/bitcoin/.bitcoin
+RUN mkdir "$BITCOIN_DATA"
+RUN chown -R bitcoin:bitcoin "$BITCOIN_DATA"
+RUN ln -sfn "$BITCOIN_DATA" /home/bitcoin/.bitcoin
+COPY bitcoin.conf /home/bitcoin/.bitcoin/bitcoin.conf
+RUN chown -h bitcoin:bitcoin /home/bitcoin/.bitcoin
+
 
 ### Development code will be removed
 #Install Node and NPM
