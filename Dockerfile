@@ -33,8 +33,7 @@ RUN chown -h bitcoin:bitcoin /home/bitcoin/.bitcoin
 
 ### Development code will be removed
 #Install Node and NPM
-RUN curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
-RUN bash nodesource_setup.sh
+RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 RUN apt-get install -y nodejs build-essential
 
 COPY dummyapp.js dummyapp.js
