@@ -7,7 +7,7 @@ RUN groupadd -r bitcoin && useradd -r -m -g bitcoin bitcoin
 RUN set -ex \
 	&& apt-get update \
 	&& apt-get install -qq --no-install-recommends -y curl wget gpg sudo \
-	software-properties-common
+	software-properties-common gpg-agent
 
 #	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr gosu \
 #  curl gpg wget gpg-agent \
