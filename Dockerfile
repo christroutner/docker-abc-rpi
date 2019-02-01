@@ -43,7 +43,7 @@ COPY dummyapp.js dummyapp.js
 
 RUN add-apt-repository ppa:bitcoin-abc/ppa
 RUN apt-get update
-RUN sudo apt-get install bitcoind
+RUN apt-get install -y bitcoind
 
 
 # These values will need to be set at run time.
