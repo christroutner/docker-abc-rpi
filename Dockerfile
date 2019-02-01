@@ -1,4 +1,3 @@
-#FROM debian:stretch-slim
 FROM ubuntu:18.04
 MAINTAINER Chris Troutner <chris.troutner@gmail.com>
 
@@ -8,20 +7,6 @@ RUN set -ex \
 	&& apt-get update \
 	&& apt-get install -qq --no-install-recommends -y curl wget gpg sudo \
 	software-properties-common gpg-agent
-
-#	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr gosu \
-#  curl gpg wget gpg-agent \
-#	&& rm -rf /var/lib/apt/lists/*
-
-#ENV BITCOIN_VERSION 0.18.7
-#ENV BITCOIN_URL https://download.bitcoinabc.org/0.18.7/linux/bitcoin-abc-0.18.7-arm-linux-gnueabihf.tar.gz
-
-# install bitcoin binaries
-#RUN set -ex \
-#	&& cd /tmp \
-#	&& wget -qO bitcoin.tar.gz "$BITCOIN_URL" \
-#	&& tar -xzvf bitcoin.tar.gz -C /usr/local --strip-components=1 --exclude=*-qt \
-#	&& rm -rf /tmp/*
 
 # create data directory
 ENV BITCOIN_DATA /data
@@ -50,10 +35,11 @@ RUN apt-get install -y bitcoind
 VOLUME /data
 EXPOSE 8332 8333 18332 18333
 
-CMD ["node", "dummyapp.js"]
+#CMD ["node", "dummyapp.js"]
 
 #COPY docker-entrypoint.sh /entrypoint.sh
 #ENTRYPOINT ["/entrypoint.sh"]
 
 
 #CMD ["bitcoind"]
+CMD ["bitcoind", "-conf=/home/bitcoin/.bitcoin/bitcoin.conf", "-datadir=/data", "-disablewallet"]
