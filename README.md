@@ -17,12 +17,6 @@ a lot of unneeded software, update the OS, install Node.js and Docker.
 
 - Format and permently mount the 256 GB USB flash drive by following [this gist](https://gist.github.com/christroutner/14351579b71deb01760aeb815d26e07d)
 
-- Install Docker:
-```
-curl -sSL https://get.docker.com | sh
-sudo usermod -aG docker pi
-```
-
 - Build the docker container by running the build script: `./build-image.sh`
 
 - Run the container with the run script: `./run-image.sh`
