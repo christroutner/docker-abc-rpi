@@ -40,7 +40,7 @@ RUN apt-get install -y nodejs build-essential
 COPY dummyapp.js dummyapp.js
 ### End development code
 
-RUN apt-get
+
 RUN add-apt-repository ppa:bitcoin-abc/ppa
 RUN apt-get update
 RUN sudo apt-get install bitcoind
