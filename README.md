@@ -23,3 +23,7 @@ a lot of unneeded software, update the OS, install Node.js and Docker.
 
 - Check on the status of bitcoind as it syncs to the blockchain:
 `sudo tail /media/usb/debug.log`
+
+- Check the version of ABC running by using curl against the JSON RPC:
+
+`curl --data-binary '{"jsonrpc":"1.0","id":"curltext","method":"getblockchaininfo","params":[]}' -H 'content-type:text/plain;' http://bitcoinrpc:ahything@127.0.0.1:8332/`
