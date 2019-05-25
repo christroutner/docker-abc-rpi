@@ -3,6 +3,11 @@ A Docker container designed to run on a Raspbery Pi, in order to turn it into
 an Bitcoin Cash full node running the ABC version of the client. The blockchain
 is expected to be stored on a 256GB USB flash drive attachd to the RPi.
 
+## Testnet
+This is a version configured for testnet. Default ports for testnet are:
+- 18332 - RPC
+- 18333 - p2p communication
+
 # Installation and Usage
 It's assumed that you are starting with a fresh installation of Raspbian on
 a Raspberry Pi B+ v3.
@@ -26,6 +31,6 @@ a lot of unneeded software, update the OS, install Node.js and Docker.
 
 - Check the version of ABC running by using curl against the JSON RPC:
 
-`curl --data-binary '{"jsonrpc":"1.0","id":"curltext","method":"getinfo","params":[]}' -H 'content-type:text/plain;' http://bitcoin:password@127.0.0.1:8332/`
+`curl --data-binary '{"jsonrpc":"1.0","id":"curltext","method":"getinfo","params":[]}' -H 'content-type:text/plain;' http://bitcoin:password@127.0.0.1:18332/`
 
-`curl --data-binary '{"jsonrpc":"1.0","id":"curltext","method":"getblockchaininfo","params":[]}' -H 'content-type:text/plain;' http://bitcoin:password@127.0.0.1:8332/`
+`curl --data-binary '{"jsonrpc":"1.0","id":"curltext","method":"getblockchaininfo","params":[]}' -H 'content-type:text/plain;' http://bitcoin:password@127.0.0.1:18332/`
