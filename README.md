@@ -3,6 +3,8 @@ A Docker container designed to run on a Raspbery Pi, in order to turn it into
 an Bitcoin Cash full node running the ABC version of the client. The blockchain
 is expected to be stored on a 256GB USB flash drive attachd to the RPi.
 
+*Note:* Syncing from genesis will take months on a Raspberry Pi, and may never finish. But if the synced blockchain is downloaded to its flash drive, a RPi can easily maintain the full node. See [bchjs.cash](https://bchjs.cash).
+
 # Installation and Usage
 It's assumed that you are starting with a fresh installation of Raspbian on
 a Raspberry Pi B+ v3.
